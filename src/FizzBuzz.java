@@ -16,6 +16,7 @@ public class FizzBuzz{
 			System.out.println("   JAVA FIZZBUZZ PROGRAM");
 			System.out.print("Enter Fizz number: ");
 			fizz = Integer.parseInt(cin.readLine());
+			// Fizz || Buzz <= 0
 			while (fizz < 0) {
 				System.out.print("ERROR: Negative numbers are not allowed! Try again: ");
 				fizz = Integer.parseInt(cin.readLine());
@@ -36,30 +37,30 @@ public class FizzBuzz{
 			startNo = Integer.parseInt(cin.readLine());
 			System.out.print("Enter ending number: ");
 			endNo = Integer.parseInt(cin.readLine());
-			if (endNo < startNo) {
-				do{
-					System.out.print("ERROR: Ending number cannot be less than starting number! Try again: ");
+			// endNo < startNo
+			while(endNo < startNo) {
+				System.out.print("ERROR: Ending number cannot be less than starting number! Try again: ");
 					endNo = Integer.parseInt(cin.readLine());
-				} while(endNo < startNo);
-			} else {
-				System.out.println("");
-				for (i = startNo; i <= endNo; i++) {
-					if (i%fizz == 0) {
-						if (i%buzz == 0)
-							System.out.format("%d. FizzBuzz\n", i);
-						else 
-							System.out.format("%d. Fizz\n", i);
-					}
-					else if (i%buzz == 0) {
-						System.out.format("%d. Buzz\n", i);
-					}
-					else { 
-						System.out.format("%d. %d\n", i,i);
-					}
+			}
+			// for loop to examine all the numbers by fizznumber and buzznumber
+			System.out.println("");
+			for (i = startNo; i <= endNo; i++) {
+				if (i%fizz == 0) {
+					if (i%buzz == 0)
+						System.out.format("%d. FizzBuzz\n", i);
+					else 
+						System.out.format("%d. Fizz\n", i);
+				}
+				else if (i%buzz == 0) {
+					System.out.format("%d. Buzz\n", i);
+				}
+				else { 
+					System.out.format("%d. %d\n", i,i);
 				}
 			} 
 			System.out.print("\n");
 		} while (fizz != 0 && buzz != 0);
+		//quit the program
 		System.out.println("\nThe end.");
 		
 		
